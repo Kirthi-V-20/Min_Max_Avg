@@ -27,3 +27,11 @@ func TestMin(t *testing.T) {
 		t.Errorf("Expected %d but got %d", expected, actual)
 	}
 }
+
+func TestMin1(t *testing.T) {
+	actual := smallest([]int{20, 50, 10})
+	expected := 10
+	if actual != expected {
+		t.Errorf("Expected %d but got %d", expected, actual)
+	}
+}
