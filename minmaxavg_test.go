@@ -43,3 +43,11 @@ func TestAvg(t *testing.T) {
 		t.Errorf("Expected %.2f but got %.2f", expected, actual)
 	}
 }
+
+func TestAvg1(t *testing.T) {
+	actual := average([]int{1, 2, 3})
+	expected := 2.0
+	if actual != expected {
+		t.Errorf("Expected %.2f but got %.2f", expected, actual)
+	}
+}
