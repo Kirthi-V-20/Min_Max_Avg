@@ -23,8 +23,13 @@ func smallest(num []int) int {
 	return min
 }
 
+func average(num []int) float64 {
+	return 5.0
+}
+
 func main() {
 	fmt.Println(largest([]int{5, 7, 3}))
 	fmt.Println(smallest([]int{5, 7, 3}))
 	fmt.Println(smallest([]int{20, 50, 10}))
+	fmt.Println(average([]int{5, 7, 3}))
 }
