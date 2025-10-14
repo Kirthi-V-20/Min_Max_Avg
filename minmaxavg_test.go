@@ -19,3 +19,11 @@ func TestMax1(t *testing.T) {
 		t.Errorf("Expected %d but got %d", expected, actual)
 	}
 }
+
+func TestMin(t *testing.T) {
+	actual := smallest([]int{5, 7, 3})
+	expected := 3
+	if actual != expected {
+		t.Errorf("Expected %d but got %d", expected, actual)
+	}
+}
