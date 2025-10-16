@@ -1,53 +1,55 @@
 package main
 
 import (
+	"math"
 	"testing"
 )
 
-func TestMax(t *testing.T) {
-	actual := largest([]int{5, 7, 3})
-	expected := 7
-	if actual != expected {
-		t.Errorf("Expected %d but got %d", expected, actual)
-	}
-}
-
-func TestMax1(t *testing.T) {
-	actual := largest([]int{20, 50, 10})
-	expected := 50
-	if actual != expected {
-		t.Errorf("Expected %d but got %d", expected, actual)
-	}
-}
-
-func TestMin(t *testing.T) {
-	actual := smallest([]int{5, 7, 3})
+func TestLargest(t *testing.T) {
+	l, _, _ := analyzeNumbers([]int{1, 2, 3})
 	expected := 3
-	if actual != expected {
-		t.Errorf("Expected %d but got %d", expected, actual)
+	if l != expected {
+		t.Errorf("Expected is %d but got %d", expected, l)
 	}
 }
 
-func TestMin1(t *testing.T) {
-	actual := smallest([]int{20, 50, 10})
-	expected := 10
-	if actual != expected {
-		t.Errorf("Expected %d but got %d", expected, actual)
+func TestLargest2(t *testing.T) {
+	l, _, _ := analyzeNumbers([]int{9, 7, 4})
+	expected := 9
+	if l != expected {
+		t.Errorf("Expected is %d but got %d", expected, l)
 	}
 }
 
-func TestAvg(t *testing.T) {
-	actual := average([]int{5, 7, 3})
-	expected := 5.0
-	if actual != expected {
-		t.Errorf("Expected %.2f but got %.2f", expected, actual)
+func TestSmallest(t *testing.T) {
+	_, s, _ := analyzeNumbers([]int{1, 2, 3})
+	expected := 1
+	if s != expected {
+		t.Errorf("Expected is %d but got %d", expected, s)
 	}
 }
 
-func TestAvg1(t *testing.T) {
-	actual := average([]int{1, 2, 3})
+func TestSmallest2(t *testing.T) {
+	_, s, _ := analyzeNumbers([]int{4, 5, 2})
+	expected := 2
+	if s != expected {
+		t.Errorf("Expected is %d but got %d", expected, s)
+	}
+}
+
+func TestAverage(t *testing.T) {
+	_, _, a := analyzeNumbers([]int{1, 2, 3})
 	expected := 2.0
-	if actual != expected {
-		t.Errorf("Expected %.2f but got %.2f", expected, actual)
+	if a != expected {
+		t.Errorf("Expected is %.2f but got %.2f", expected, a)
+	}
+}
+
+func TestAverage2(t *testing.T) {
+	_, _, a := analyzeNumbers([]int{5, 8, 6})
+	expected := 6.33
+	a = math.Round(a*100) / 100
+	if a != expected {
+		t.Errorf("Expected is %.2f but got %.2f", expected, a)
 	}
 }
